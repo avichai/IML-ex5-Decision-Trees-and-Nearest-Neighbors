@@ -70,11 +70,11 @@ def id3(train_set, labels, feature_coord, available_depth):
     split_examples = get_examples(train_set, labels, ind_max)
     node = Node(None,
                 id3(split_examples[0][0], split_examples[0][1], new_feat,
-                    available_depth-1),
+                    available_depth - 1),
                 id3(split_examples[1][0], split_examples[1][1], new_feat,
-                    available_depth-1),
+                    available_depth - 1),
                 id3(split_examples[2][0], split_examples[2][1], new_feat,
-                    available_depth-1),
+                    available_depth - 1),
                 False, ind_max)
     return node
 
@@ -219,7 +219,6 @@ def main():
         errors_test.append(test_examples(tree, test, labels_test))
 
     disp_errors(errors_test, errors_train)
-
 
 
 if __name__ == '__main__':
